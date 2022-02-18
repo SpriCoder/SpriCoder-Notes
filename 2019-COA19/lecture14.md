@@ -1,4 +1,4 @@
-WInstruction Sets
+Instruction Sets
 ---
 <!-- TOC -->
 
