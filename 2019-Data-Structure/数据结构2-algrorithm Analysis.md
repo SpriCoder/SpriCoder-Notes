@@ -89,14 +89,14 @@
 
 ### 2.3.1. 例一
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.1.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.1.png)
 
 1. 在调用相应函数之前的空间是不进行计算的，所以数组并没有单独多余输入。
 2. a是一个指针。  
 
 结果
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.2.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.2.png)
 
 1. 例子机器是16个字节
 2. S(n):S表示space
@@ -110,11 +110,11 @@
 
 ### 2.3.2. 例二
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.3.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.3.png)
 
 结果
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.4.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.4.png)
 
 1. 只要你写了局部变量，局部变量静态分布，在执行局部之前就已经分配好了而不是等到执行的时候才分配地址。
 2. 返回值地址需要被存储(不然无法进行返回)
@@ -126,14 +126,14 @@
 1. the amount of time a program needs to run to completion 程序运行完成所需要的时间
 2. 编译时间是不计算近时间复杂度，一般来说我们的编译次数是远远小于运行时间，一般只消耗一次。
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.5.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.5.png)
 
 ## 3.1. 计算程序的时间复杂度
 1. 关键的是计数中间的关键的操作个数。
     + 格外重要的是在循环中的操作个数
 2. 第一个例子:
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.6.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.6.png)
 
 1. 先假设所有的操作都进行计算
     + 1(pos)+1(i)+(n-1)(for): 包含赋值语句，还包括for循环中每次都必须要做的语句。
@@ -154,7 +154,7 @@
 
 ## 3.2. 不同情况下的时间复杂度的情况
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.8.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.8.png)
 
 ### 3.2.1. 最好情况
 
@@ -166,20 +166,20 @@
 ### 3.2.3. 最差情况
 
 ### 3.2.4. 例子
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.9.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.9.png)
 
 1. 最好情况下:一次性结束，第一次找到
 2. 最坏情况下:n次结束，最后一次找到
 3. 平均情况下:(n+1)/2，使用算术平均值
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.10.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.10.png)
 
 1. 不等概率下如何进行计算?
     + 将对应的位置上的概率加权进行计算。
 
 # 4. 如何统计大规模的算法步数
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.12.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.12.png)
 
 1. 使用整形变量count，并且加入到相应的必要的地方进行计数。
 2. 为程序加入计数器
@@ -193,7 +193,7 @@
 2. 定义:f(n)=O(g(n)) iff positive constant c and n<sub>0</sub> exist such that f(n) <=c * g(n)  for all n, n>=n<sub>0</sub> 
 3. 例子:
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.13.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.13.png)
 
 4. 复杂度排序:从小到大
     1. O(1)
@@ -319,13 +319,13 @@ public static long gcd( long m, long n ) {
 1. 表示的是一个算法的复杂度在数量级上的下界。
 2. 定义:is the lower bound analog of the big Oh notation,permits us to bound the value f from below. 
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.16.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.16.png)
 
 3. 表示的是下限。
 
 ## 5.3. Theta θ表示法
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img\cpt2\im2.17.png)
+![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2019-Data-Structure/img/cpt2/im2.17.png)
 
 1. 不能向大了写，也不能向小了写。
 2. 考试中我们使用的表示法。
