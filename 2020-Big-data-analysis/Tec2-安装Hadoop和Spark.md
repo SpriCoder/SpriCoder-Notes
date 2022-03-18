@@ -19,7 +19,7 @@ Tec2-安装Hadoop和Spark
 
 ## 3.2. 下载Winutils-3.1.0
 1. 因为Hadoop在2.0之前是完全运行在Linux系统上的，所以在之后如果想要在Windows上安装需要我们下载相应的exe才可以。
-2. <a href = "https://github.com/stormbroken/apache-hadoop-3.1.0-winutils">下载地址</a>，可以使用fork的方式到自己的仓库然后下载，也可以直接选择下载ZIP文件。
+2. <a href = "https://github.com/SpriCoder/apache-hadoop-3.1.0-winutils">下载地址</a>，可以使用fork的方式到自己的仓库然后下载，也可以直接选择下载ZIP文件。
 
 ## 3.3. 解压Hadoop
 1. 将刚刚下载的以tar.gz的文件以**管理员权限**进行解压
