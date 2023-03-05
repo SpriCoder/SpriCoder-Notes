@@ -67,7 +67,7 @@ Lec2-开发数据库的要点
 1. 我们想运行一个日报表，了解银行里有多少钱。下面是一个非常简单的查询：Select sum(account_balance) from accounts;
 2. Oracle和其它数据库在并发上的差别(一致性读)：Oracle就没有读共享锁
 
-![](https://spricoder.oss-cn-shanghai.aliyuncs.com/2021-Database-Development/img/lec2/3.png)
+![image-20230305164745974](https://cdn.jsdelivr.net/gh/rothsch/PicgoImageSource@main/img/202303051647600.png)
 
 ## 3.5. 从体系结构和特性中了解具体数据库的锁机制
 1. 比如Oracle实现的锁机制
