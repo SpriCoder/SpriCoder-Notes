@@ -177,7 +177,7 @@ make install
    1. 标准输入文件(stdin)：stdin的文件描述符为0，Unix程序默认从stdin读取数据。
    2. 标准输出文件(stdout)：stdout的文件描述符为1，Unix程序默认向stdout输出数据。
    3. 标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。
-5. 如果希望将stdout和stderr合并后重定向到file，可以这样写：command > file 2 >& 1或command >> file 2>&1，为什么需要将标准错误重定向到标准输出的原因，那就归结为标准错误没有缓冲区，而stdout有。
+5. 如果希望将stdout和stderr合并后重定向到file，可以这样写：`command > file 2>&1` 或`command >> file 2>&1`，为什么需要将标准错误重定向到标准输出的原因，那就归结为标准错误没有缓冲区，而stdout有。
 6. 如果希望对stdin和stdout都重定向，可以这样写：command < file1 > file2；command命令将stdin重定向到file1，将stdout重定向到file2。
 
 ## 2.4. 管道 掌握
@@ -241,7 +241,7 @@ make install
 
 ### 2.8.1. 字符串操作
 1. `str1 = str2` 字符串相同则结果真
-2. `str1 != str2` 字符串不先沟通则结果为真
+2. `str1 != str2` 字符串不相同则结果为真
 3. `-z str` 字符串为空则结果为真
 4. `-n str` 字符串不为空则结果为真
 
