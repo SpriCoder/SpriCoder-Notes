@@ -177,7 +177,7 @@ make install
    1. 标准输入文件(stdin)：stdin的文件描述符为0，Unix程序默认从stdin读取数据。
    2. 标准输出文件(stdout)：stdout的文件描述符为1，Unix程序默认向stdout输出数据。
    3. 标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。
-5. 如果希望将stdout和stderr合并后重定向到file，可以这样写：command > file 2 >& 1或command >> file 2>&1，为什么需要将标准错误重定向到标准输出的原因，那就归结为标准错误没有缓冲区，而stdout有。
+5. 如果希望将stdout和stderr合并后重定向到file，可以这样写：`command > file 2>&1` 或`command >> file 2>&1`，为什么需要将标准错误重定向到标准输出的原因，那就归结为标准错误没有缓冲区，而stdout有。
 6. 如果希望对stdin和stdout都重定向，可以这样写：command < file1 > file2；command命令将stdin重定向到file1，将stdout重定向到file2。
 
 ## 2.4. 管道 掌握
@@ -241,7 +241,7 @@ make install
 
 ### 2.8.1. 字符串操作
 1. `str1 = str2` 字符串相同则结果真
-2. `str1 != str2` 字符串不先沟通则结果为真
+2. `str1 != str2` 字符串不相同则结果为真
 3. `-z str` 字符串为空则结果为真
 4. `-n str` 字符串不为空则结果为真
 
@@ -416,7 +416,8 @@ func para1 para2 # 函数内部调用$1 $2 得不到脚本参数，而是调用�
 
 ```sh
 gcc –o hello hello.c ： 将hello.c文件编译成hello的可执行文件
-gcc –c hello.c ： 将hello.c文件生成hello.o文件 gcc -E hello.c ： 只是激活预处理，不生成文档，需要把它重定向到另外一个文档里
+gcc –c hello.c ： 将hello.c文件生成hello.o文件 
+gcc -E hello.c ： 只是激活预处理，不生成文档，需要把它重定向到另外一个文档里
 gcc –S hello.c ： 将hello.c文件生成hello.s文件的汇编代码
 gcc –pipe –o hello hello.c ： 使用管道代替编译中临时文档
 gcc hello.c –include /root/hello.h ：包含某个代码，简单来说，就是以某个文档，需要另外一个文档的时候，就能够用它设定，功能就相当于在代码中使
@@ -706,8 +707,9 @@ int main(){
    1. F_DUPDF：复制文件描述符
    2. F_GETFD/F_SETFD：获取/设置文件描述符标志，为解决fork子进程执行其他任务(exec等)导致父进程的文件描述符被复制到子进程中，使得对应文件描述符无法被之后需要的进程获取。设置了这个标记后可以使得子进程在执行exce等命令后释放对应的文件描述符资源。
    3. F_GETFL/F_SETFL:获得/设置文件状态标志(open/creat中的flags 参数)，目前只能更改0_APPEND , 0_ASYNC, 0_DIRECT, 0_NOATIME,O_NONBLOCK
-   4. F_GETOWN/F_SETOWN: 管理1/0可用相关的信号。获得或设置当前文件描述符会接受SIGI0和SIGURG信号的进程或进程组编号F_GETLK/F_SETLK/F_SETLKW: 获得/设置文件锁,设置为F_GETLK时需要传入flock* 指针用于存放最后的锁信息。S_SETLK 需要传入flock *指针表示需要改变的锁的内容,如果不能被设置,则立即返回EAGAIN。
-   5. s_SETLKW同s_SETLK，但是在锁无法设置时会阻塞等待任务完成。
+   4. F_GETOWN/F_SETOWN: 管理I/O可用相关的信号。获得或设置当前文件描述符会接受SIGI0和SIGURG信号的进程或进程组编号
+   5. F_GETLK/F_SETLK/F_SETLKW: 获得/设置文件锁,设置为F_GETLK时需要传入flock* 指针用于存放最后的锁信息。S_SETLK 需要传入flock *指针表示需要改变的锁的内容,如果不能被设置,则立即返回EAGAIN。
+   6. s_SETLKW同s_SETLK，但是在锁无法设置时会阻塞等待任务完成。
 
 #### 4.5.2.4. 头文件`<sys/stat.h>`
 1. `int stat(const char *filename, struct stat *buf); `
